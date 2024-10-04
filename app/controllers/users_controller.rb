@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.with(
-          to: @user.email
+          to: @user.email,
           name: @user.name
         ).welcome.deliver_now
         format.html { redirect_to @user, notice: "User was successfully created." }
