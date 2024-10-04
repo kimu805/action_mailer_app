@@ -11,5 +11,6 @@ class UserMailerTest < ActionMailer::TestCase
     assert_equal ["igarashi@example.com"], email.to
     assert_equal "登録完了", email.subject
     assert_includes email.text_part.decoded, "igaiga"
+    assert_includes email.html_part.decoded, "igaiga"
   end
 end
