@@ -8,5 +8,6 @@ class UserMailerTest < ActionMailer::TestCase
     ).welcome
     assert_emails(1){ email.deliver_now }
     assert_equal ["perfect_rails@example.com"], email.from
+    assert_equal ["igarashi@example.com"], email.to
   end
 end
