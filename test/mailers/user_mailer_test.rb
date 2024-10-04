@@ -9,5 +9,6 @@ class UserMailerTest < ActionMailer::TestCase
     assert_emails(1){ email.deliver_now }
     assert_equal ["perfect_rails@example.com"], email.from
     assert_equal ["igarashi@example.com"], email.to
+    assert_equal "登録完了", email.subject
   end
 end
